@@ -1,4 +1,7 @@
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
+vim.o.number = true  -- Use vim.o instead of vim.wo for global options
+vim.api.nvim_set_keymap('n', '<leader>gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.g.autopairs_filetype_blacklist = {'dashboard'}

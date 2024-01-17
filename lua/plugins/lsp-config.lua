@@ -2,6 +2,10 @@ return {
   {
     "williamboman/mason.nvim",
     lazy = false,
+    ensure_installed = {
+        "clangd",
+        "pyright"
+    },
     config = function()
       require("mason").setup()
     end,
@@ -27,6 +31,12 @@ return {
         capabilities = capabilities
       })
       lspconfig.lua_ls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.clangd.setup({
+        capabilities = capabilities
+      })
+      lspconfig.pyright.setup({
         capabilities = capabilities
       })
 
